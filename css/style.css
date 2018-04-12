@@ -1,29 +1,41 @@
-/* GLOBAL */
+/* RESETS */
 a {text-decoration: none;}
+p {margin: 0;}
+ul, ul li {padding: 0;}
 ul li {display: inline-block}
 img {max-width: 100%;}
 button {border:0;}
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 
 /* GENERAL */
 body {
+  height: 100vh;
   background: #fff;
   color: #222;
   font-family: arial, sans-serif;
   font-size: small;
   margin: 0;
 }
+
 header nav {
   display: flex;
   justify-content: flex-end;
+  margin-right: 20px;
+}
+
+header ul li {
+  padding-right: 10px;
 }
 
 nav ul {
   display: flex;
+  flex-flow: row wrap;
   align-items: center;
-}
-
-nav ul li {
-  padding: 0 10px;
 }
 
 nav a {
@@ -39,31 +51,44 @@ main {
   max-width: 500px;
   margin: 0 auto;
   text-align: center;
-  padding: 2em;
 }
 
-main input {
-  margin: 2em 0;
-}
+main > div {margin: 2em 0;}
 
-main .search-box {
+.search-box {
   width: 100%;
-  height: 50px;
-  padding: 0;
+  height: 40px;
+  border: 1px solid #ddd;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.15);
+  display: grid;
+  grid-template-columns: 1fr repeat(2, 32px);
+}
+.search-box input {
+  outline: none;
   border: none;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08)
+  padding: 0 10px;
 }
 
-.apps-btn {
+.search-box span {cursor: pointer}
+
+span.tools {
+  background: url('../images/keyboard.gif') no-repeat center;
+}
+
+span.voice {
+  background: url('../images/googlevoice.png') no-repeat center;
+}
+
+.apps {
   height: 30px;
-  width: 30px;
+  width: 40px;
   background-image: url('../images/googlesprite.png');
   background-size: 528px 68px;
   background-position: -132px -38px;
   opacity: 0.55;
   cursor: pointer;
 }
-.apps-btn:hover {opacity: 1}
+.apps:hover {opacity: 1}
 
 .btn {
   padding: 8px 14px;
@@ -91,14 +116,24 @@ footer {
   position: absolute;
   bottom: 0;
   left: 0;
-  background: rgb(242, 242, 242);
+  background: #f2f2f2;
   border-top: 1px solid #e4e4e4;
+  padding: 0 20px;
+}
+
+footer nav {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+footer a {
+  color: #666;
 }
 
 footer ul li {
-  padding: 0 15px;
+  padding-right: 15px;
 }
-
-footer > div {
-  display: inline-block;
+footer ul li:last-child {
+  padding-right: 0;
 }
