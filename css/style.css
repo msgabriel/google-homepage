@@ -14,13 +14,17 @@ html {
 
 /* GENERAL */
 body {
-  height: 100vh;
+  display: flex;
+  flex-flow: column wrap;
+  min-height: 100vh;
   background: #fff;
   color: #222;
   font-family: arial, sans-serif;
   font-size: small;
   margin: 0;
 }
+
+a:hover {text-decoration: underline;}
 
 header nav {
   display: flex;
@@ -44,39 +48,38 @@ nav a {
 
 nav a:hover {
   color: rgba(34,34,34,0.8);
-  text-decoration: underline;
 }
 
 main {
-  max-width: 500px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 580px;
   text-align: center;
+  flex-grow: 1;
+  align-self: center;
+  margin-top: 6%;
 }
 
 main > div {margin: 2em 0;}
 
 .search-box {
   width: 100%;
-  height: 40px;
+  height: 45px;
   border: 1px solid #ddd;
   box-shadow: 0 1px 2px 0 rgba(0,0,0,0.15);
   display: grid;
-  grid-template-columns: 1fr repeat(2, 32px);
+  grid-template-columns: 1fr 36px;
 }
 .search-box input {
   outline: none;
   border: none;
   padding: 0 10px;
+  font-size: 16px;
 }
 
 .search-box span {cursor: pointer}
 
-span.tools {
-  background: url('../images/keyboard.gif') no-repeat center;
-}
-
 span.voice {
-  background: url('../images/googlevoice.png') no-repeat center;
+  background: url('../images/googlevoice.png') no-repeat center left;
 }
 
 .apps {
@@ -104,6 +107,8 @@ span.voice {
 
 .btn-default:hover {
   border: 1px solid #c6c6c6;
+  color: #333;
+  background-image: linear-gradient(to bottom, #f5f5f5, #eee);
 }
 
 .btn-blue {
@@ -111,24 +116,29 @@ span.voice {
   color: #fff;
 }
 
+a.btn-blue:hover {
+  text-decoration: none;
+  color: #fff;
+  box-shadow: 0 1px #c6c6c6;
+}
+
 footer {
   width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
   background: #f2f2f2;
   border-top: 1px solid #e4e4e4;
-  padding: 0 20px;
+  color: #757575;
 }
 
 footer nav {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+  border-top: 1px solid #e4e4e4;
+  padding: 0 25px;
 }
 
 footer a {
-  color: #666;
+  color: inherit;
 }
 
 footer ul li {
@@ -136,4 +146,12 @@ footer ul li {
 }
 footer ul li:last-child {
   padding-right: 0;
+}
+
+.country {
+  padding: 1em 25px;
+}
+.country p {
+  font-size: 15px;
+  opacity: 0.8;
 }
